@@ -28,17 +28,19 @@ Currently **Bookmark 🔖** supports 5 bookmarks per page. If you feel that you'
 If for some reason you wish to clean all the bookmarks for current page, plugin menu has an option for that. (Helps me with debugging this script)
 
 **Keyboard Shortcuts**
-<kbd>fn</kbd> + <kbd>⇧ shift</kbd> + <kbd>1</kbd> = Save bookmark 1 for current page.
-<kbd>fn</kbd> + <kbd>⇧ shift</kbd> + <kbd>2</kbd> = Save bookmark 2 for current page.
-<kbd>fn</kbd> + <kbd>⇧ shift</kbd> + <kbd>3</kbd> = Save bookmark 3 for current page.
-<kbd>fn</kbd> + <kbd>⇧ shift</kbd> + <kbd>4</kbd> = Save bookmark 4 for current page.
-<kbd>fn</kbd> + <kbd>⇧ shift</kbd> + <kbd>5</kbd> = Save bookmark 5 for current page.
 
-<kbd>fn</kbd> + <kbd>1</kbd> = Load bookmark 1 for current page.
-<kbd>fn</kbd> + <kbd>2</kbd> = Load bookmark 2 for current page.
-<kbd>fn</kbd> + <kbd>3</kbd> = Load bookmark 3 for current page.
-<kbd>fn</kbd> + <kbd>4</kbd> = Load bookmark 4 for current page.
-<kbd>fn</kbd> + <kbd>5</kbd> = Load bookmark 5 for current page.
+| *Shortcut*                                        | *Action*                          |
+|---------------------------------------------------|-----------------------------------|
+| <kbd>fn</kbd> + <kbd>⇧ shift</kbd> + <kbd>1</kbd> | Save bookmark 1 for current page. |
+| <kbd>fn</kbd> + <kbd>⇧ shift</kbd> + <kbd>2</kbd> | Save bookmark 2 for current page. |
+| <kbd>fn</kbd> + <kbd>⇧ shift</kbd> + <kbd>3</kbd> | Save bookmark 3 for current page. |
+| <kbd>fn</kbd> + <kbd>⇧ shift</kbd> + <kbd>4</kbd> | Save bookmark 4 for current page. |
+| <kbd>fn</kbd> + <kbd>⇧ shift</kbd> + <kbd>5</kbd> | Save bookmark 5 for current page. |
+| <kbd>fn</kbd> + <kbd>1</kbd>                      | Load bookmark 1 for current page. |
+| <kbd>fn</kbd> + <kbd>2</kbd>                      | Load bookmark 2 for current page. |
+| <kbd>fn</kbd> + <kbd>3</kbd>                      | Load bookmark 3 for current page. |
+| <kbd>fn</kbd> + <kbd>4</kbd>                      | Load bookmark 4 for current page. |
+| <kbd>fn</kbd> + <kbd>5</kbd>                      | Load bookmark 5 for current page. |
 
 ## Feedback
 If you discover any problems, please create a new issue here explaining the problem.
