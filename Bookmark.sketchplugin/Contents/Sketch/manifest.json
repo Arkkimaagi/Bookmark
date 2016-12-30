@@ -1,0 +1,120 @@
+{
+  "author" : "Mikko Tapionlinna",
+  "commands" : [
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "onSave1",
+      "shortcut" : "function shift 1",
+      "name" : "Save bookmark 1",
+      "identifier" : "bookmark-save-1"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "onSave2",
+      "shortcut" : "function shift 2",
+      "name" : "Save bookmark 2",
+      "identifier" : "bookmark-save-2"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "onSave3",
+      "shortcut" : "function shift 3",
+      "name" : "Save bookmark 3",
+      "identifier" : "bookmark-save-3"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "onSave3",
+      "shortcut" : "function shift 3",
+      "name" : "Save bookmark 3",
+      "identifier" : "bookmark-save-3"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "onSave4",
+      "shortcut" : "function shift 4",
+      "name" : "Save bookmark 4",
+      "identifier" : "bookmark-save-4"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "onSave5",
+      "shortcut" : "function shift 5",
+      "name" : "Save bookmark 5",
+      "identifier" : "bookmark-save-5"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "onLoad1",
+      "shortcut" : "function 1",
+      "name" : "Load bookmark 1",
+      "identifier" : "bookmark-load-1"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "onLoad2",
+      "shortcut" : "function 2",
+      "name" : "Load bookmark 2",
+      "identifier" : "bookmark-load-2"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "onLoad3",
+      "shortcut" : "function 3",
+      "name" : "Load bookmark 3",
+      "identifier" : "bookmark-load-3"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "onLoad4",
+      "shortcut" : "function 4",
+      "name" : "Load bookmark 4",
+      "identifier" : "bookmark-load-4"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "onLoad5",
+      "shortcut" : "function 5",
+      "name" : "Load bookmark 5",
+      "identifier" : "bookmark-load-5"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "clearAllBookmarks",
+      "shortcut" : "",
+      "name" : "Clear all bookmarks on this page",
+      "identifier" : "clearAllBookmarks"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
+      "handler" : "about",
+      "shortcut" : "",
+      "name" : "About Bookmark 🔖...",
+      "identifier" : "about"
+    }
+  ],
+  "menu": {
+    "isRoot": false,
+    "items": [
+      "bookmark-save-1",
+      "bookmark-save-2",
+      "bookmark-save-3",
+      "bookmark-save-4",
+      "bookmark-save-5",
+      "-",
+      "bookmark-load-1",
+      "bookmark-load-2",
+      "bookmark-load-3",
+      "bookmark-load-4",
+      "bookmark-load-5",
+      "-",
+      "clearAllBookmarks",
+      "about"
+    ]
+  },
+  "identifier" : "com.github.arkkimaagi.bookmark",
+  "version" : "1.0.0",
+  "description" : "Bookmark your place and zoom in Sketch.app",
+  "authorEmail" : "mikko@tapionlinna.fi",
+  "name" : "Bookmark 🔖"
+}

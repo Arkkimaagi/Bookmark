@@ -1,0 +1,153 @@
+// The MIT License (MIT)
+
+// Copyright (c) 2016 Mikko Tapionlinna
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+var prefix = 'Arkkimaagi-Bookmark';
+
+function getRealKey(context, key){
+  var doc = context.document;
+  var pageId = [[doc currentPage] objectID];
+  var realKey = '-' + prefix + '-' + pageId + '-'+ key;
+  return realKey;
+}
+
+function getConfig(context, key) {
+  var realKey = getRealKey(context, key);
+
+  var defaults = [NSUserDefaults standardUserDefaults];
+  var value = [defaults objectForKey: realKey];
+
+  return value;
+}
+
+function clearConfig(context, key) {
+  var realKey = getRealKey(context, key);
+
+  var defaults = [NSUserDefaults standardUserDefaults];
+  var registeredDefaults = [defaults volatileDomainForName:NSRegistrationDomain];
+
+  if ([registeredDefaults objectForKey:realKey] != nil) {
+
+    var mutableDictionary = [NSMutableDictionary dictionaryWithDictionary:registeredDefaults];
+    [mutableDictionary removeObjectForKey:realKey];
+
+    [defaults setVolatileDomain:[mutableDictionary copy] forName:NSRegistrationDomain];
+  }
+}
+
+function setConfig(context, key, value) {
+  var realKey = getRealKey(context, key);
+
+  var defaults = [NSUserDefaults standardUserDefaults];
+  var configs  = [NSMutableDictionary dictionary];
+
+  [configs setObject: value forKey: realKey]
+
+  return [defaults registerDefaults: configs];
+}
+
+var onSave = function(context, id) {
+
+  var doc = context.document;
+  var scrollOrigin = [doc scrollOrigin];
+  var zoomValue = [doc zoomValue];
+
+  setConfig(context, id+"-x", scrollOrigin.x);
+  setConfig(context, id+"-y", scrollOrigin.y);
+  setConfig(context, id+"-z", zoomValue);
+
+  doc.showMessage("Bookmark "+id+" saved");
+};
+
+var onLoad = function(context, id) {
+  var doc = context.document;
+
+  var x = getConfig(context, id+"-x");
+  var y = getConfig(context, id+"-y");
+  var z = getConfig(context, id+"-z");
+
+  if(x == null || y == null || z == null) {
+    doc.showMessage("Bookmark "+id+" was not found for this page");
+    return false;
+  }
+
+  var targetPoint = NSMakePoint(x,y);
+  var targetZoom = z;
+
+  [doc setZoomValue:targetZoom]
+  [doc setScrollOrigin:targetPoint]
+
+  // This is here to force a redraw of the canvas
+  var c = [doc currentPage]
+  [doc setCurrentPage:0]
+  [doc setCurrentPage:c]
+
+  doc.showMessage("Bookmark "+id+" loaded");
+};
+
+var onSave1 = function(context) {onSave(context, 1);}
+var onSave2 = function(context) {onSave(context, 2);}
+var onSave3 = function(context) {onSave(context, 3);}
+var onSave4 = function(context) {onSave(context, 4);}
+var onSave5 = function(context) {onSave(context, 5);}
+
+var onLoad1 = function(context) {onLoad(context, 1);}
+var onLoad2 = function(context) {onLoad(context, 2);}
+var onLoad3 = function(context) {onLoad(context, 3);}
+var onLoad4 = function(context) {onLoad(context, 4);}
+var onLoad5 = function(context) {onLoad(context, 5);}
+
+function clearAllBookmarks(context){
+  var max = 5
+  for(var i=1;i<=max;i++){
+    clearConfig(context, i+"-x");
+    clearConfig(context, i+"-y");
+    clearConfig(context, i+"-z");
+  }
+
+  var doc = context.document;
+  doc.showMessage("All bookmarks cleared for this page");
+}
+
+var about = function(context) {
+
+  // Create the dialog
+  var alert = COSAlertWindow.new();
+
+  alert.setMessageText("Sketch Bookmark");
+  alert.setInformativeText(
+    "Bookmark plugin was created by Mikko Tapionlinna. \n"+
+    "\n"+
+    "Shortcuts:\n"+
+      "\t\tfn ⇧ 1 = Save bookmark 1\n"+
+      "\t\tfn 1 = Load bookmark 1\n"+
+    "\n"+
+    "Please report bugs at \n"+
+    "http://github.com/Arkkimaagi/Sketch Bookmark/");
+  alert.addButtonWithTitle("OK");
+
+  var iconPath = context.plugin.urlForResourceNamed("bookmark.png").path();
+  var icon = NSImage.alloc().initByReferencingFile(iconPath);
+  alert.setIcon(icon);
+
+  // Show dialog
+  alert.runModal();
+}
