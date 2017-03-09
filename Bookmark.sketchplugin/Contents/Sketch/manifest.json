@@ -24,13 +24,6 @@
     },
     {
       "script" : "Bookmark.cocoascript",
-      "handler" : "onSave3",
-      "shortcut" : "function shift 3",
-      "name" : "Save bookmark 3",
-      "identifier" : "bookmark-save-3"
-    },
-    {
-      "script" : "Bookmark.cocoascript",
       "handler" : "onSave4",
       "shortcut" : "function shift 4",
       "name" : "Save bookmark 4",
