@@ -106,7 +106,7 @@
     ]
   },
   "identifier" : "com.github.arkkimaagi.bookmark",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "description" : "Bookmark your place and zoom in Sketch.app",
   "authorEmail" : "mikko@tapionlinna.fi",
   "name" : "Bookmark 🔖"

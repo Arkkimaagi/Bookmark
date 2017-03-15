@@ -1,4 +1,4 @@
-# Bookmark 🔖
+# Bookmark 🔖 v.1.0.1
 _Bookmark your place and zoom in Sketch.app_
 
 When working on a long document in Sketch.app, I often thought that it would be nice to quickly navigate between my reference and the current working place. So, I wrote a little script to do just that. You can save 5 bookmarks per page and navigate quickly between them.
