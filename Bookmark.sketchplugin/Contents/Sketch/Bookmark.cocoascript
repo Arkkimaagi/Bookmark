@@ -85,8 +85,16 @@ var onLoad = function(context, id) {
   var z = getConfig(context, id+"-z");
 
   if(x == null || y == null || z == null) {
-    doc.showMessage("Bookmark "+id+" was not found for this page");
+    if(id == 0){
+      doc.showMessage("No previous location saved for this page, try using bookmarks first.");
+    }else{
+      doc.showMessage("Bookmark "+id+" was not found for this page");
+    }
     return false;
+  }
+
+  if(id != 0){
+    onSave(context, 0);
   }
 
   var targetPoint = NSMakePoint(x,y);
@@ -100,7 +108,11 @@ var onLoad = function(context, id) {
   [doc setCurrentPage:0]
   [doc setCurrentPage:c]
 
-  doc.showMessage("Bookmark "+id+" loaded");
+  if (id == 0){
+    doc.showMessage("Previous location restored");
+  }else{
+    doc.showMessage("Bookmark "+id+" loaded");
+  }
 };
 
 var onSave1 = function(context) {onSave(context, 1);}
@@ -115,9 +127,11 @@ var onLoad3 = function(context) {onLoad(context, 3);}
 var onLoad4 = function(context) {onLoad(context, 4);}
 var onLoad5 = function(context) {onLoad(context, 5);}
 
+var onLoad0 = function(context) {onLoad(context, 0);}
+
 function clearAllBookmarks(context){
   var max = 5
-  for(var i=1;i<=max;i++){
+  for(var i=0;i<=max;i++){
     clearConfig(context, i+"-x");
     clearConfig(context, i+"-y");
     clearConfig(context, i+"-z");

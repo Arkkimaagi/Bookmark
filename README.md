@@ -1,4 +1,4 @@
-# Bookmark 🔖 v.1.0.1
+# Bookmark 🔖 v.1.1.0
 _Bookmark your place and zoom in Sketch.app_
 
 When working on a long document in Sketch.app, I often thought that it would be nice to quickly navigate between my reference and the current working place. So, I wrote a little script to do just that. You can save 5 bookmarks per page and navigate quickly between them.
@@ -31,6 +31,8 @@ Select `Plugins ▸ Bookmark 🔖 ▸ Save bookmark 1` in the Sketch menu bar or
 
 To load a bookmark, select `Plugins ▸ Bookmark 🔖 ▸ Load bookmark 1` in the Sketch menu bar or use the keyboard shortcut <kbd>fn</kbd> + <kbd>1</kbd> to load the currently saved bookmark. If you save a new bookmark on the same number, the old one is overwritten.
 
+After loading a bookmark, you can return to the previous location using the shortcut <kbd>fn</kbd> + <kbd>0</kbd> . Note that this only stores only one location from where you last load a bookmark.
+
 Currently **Bookmark 🔖** supports 5 bookmarks per page. If you feel that you'd want more, please let me know.
 
 If for some reason you wish to clean all the bookmarks for current page, plugin menu has an option for that. (Helps me with debugging this script)
@@ -49,9 +51,10 @@ If for some reason you wish to clean all the bookmarks for current page, plugin 
 | <kbd>fn</kbd> + <kbd>3</kbd>                      | Load bookmark 3 for current page. |
 | <kbd>fn</kbd> + <kbd>4</kbd>                      | Load bookmark 4 for current page. |
 | <kbd>fn</kbd> + <kbd>5</kbd>                      | Load bookmark 5 for current page. |
-
+| <kbd>fn</kbd> + <kbd>0</kbd>                      | Return to previous location for current page. |
 ## Version history
 
+* 1.1.0 Added feature to return to the location where you last loaded a bookmark from.
 * 1.0.1 Removed duplicate command to save bookmark 3 (thanks @azhsetiawan); Added documentation about Sketchpack installation; Added version history (you're reading it)
 * 1.0.0 Initial version
 

@@ -73,6 +73,13 @@
     },
     {
       "script" : "Bookmark.cocoascript",
+      "handler" : "onLoad0",
+      "shortcut" : "function 0",
+      "name" : "Return to previous location",
+      "identifier" : "bookmark-load-0"
+    },
+    {
+      "script" : "Bookmark.cocoascript",
       "handler" : "clearAllBookmarks",
       "shortcut" : "",
       "name" : "Clear all bookmarks on this page",
@@ -101,12 +108,14 @@
       "bookmark-load-4",
       "bookmark-load-5",
       "-",
+      "bookmark-load-0",
+      "-",
       "clearAllBookmarks",
       "about"
     ]
   },
   "identifier" : "com.github.arkkimaagi.bookmark",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "description" : "Bookmark your place and zoom in Sketch.app",
   "authorEmail" : "mikko@tapionlinna.fi",
   "name" : "Bookmark 🔖"
