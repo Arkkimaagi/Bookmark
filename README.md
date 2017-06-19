@@ -1,4 +1,4 @@
-# Bookmark 🔖 v.1.1.0
+# Bookmark 🔖 v.1.1.1
 _Bookmark your place and zoom in Sketch.app_
 
 When working on a long document in Sketch.app, I often thought that it would be nice to quickly navigate between my reference and the current working place. So, I wrote a little script to do just that. You can save 5 bookmarks per page and navigate quickly between them.
@@ -54,6 +54,7 @@ If for some reason you wish to clean all the bookmarks for current page, plugin 
 | <kbd>fn</kbd> + <kbd>0</kbd>                      | Return to previous location for current page. |
 ## Version history
 
+* 1.1.1 Added support for Sketch 45 update plugin feature
 * 1.1.0 Added feature to return to the location where you last loaded a bookmark from.
 * 1.0.1 Removed duplicate command to save bookmark 3 (thanks @azhsetiawan); Added documentation about Sketchpack installation; Added version history (you're reading it)
 * 1.0.0 Initial version
