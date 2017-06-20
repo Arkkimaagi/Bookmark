@@ -65,3 +65,10 @@ If for some reason you wish to clean all the bookmarks for current page, plugin 
 If you discover any problems, please create a new issue here explaining the problem.
 
 <img src="/../artwork/bookmark.png?raw=true" alt="Bookmark 🔖" width="100">
+
+---
+
+## Catch all Sketch App plugins by Arkkimaagi:
+
+* [ArtboardZoom](https://github.com/Arkkimaagi/ArtboardZoom)
+* [Bookmark 🔖](https://github.com/Arkkimaagi/Bookmark)
