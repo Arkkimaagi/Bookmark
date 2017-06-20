@@ -9,6 +9,8 @@ When working on a long document in Sketch.app, I often thought that it would be 
 Installation should be quite easy, here are three ways to do it.
 
 ### Install using Sketchpacks (recommended)
+[![Install Bookmark 🔖 with Sketchpacks](http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png "Install Bookmark 🔖 with Sketchpacks")](https://sketchpacks.com/Arkkimaagi/Bookmark/install)
+
 1. Install the app from https://sketchpacks.com/
 2. Install the plugin using the app.
 3. Start using it.
